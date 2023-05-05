@@ -1,2 +1,7 @@
-package howisitgoing.junitstudy.example;public enum StudyStatus {
+package howisitgoing.junitstudy.example;
+
+public enum StudyStatus {
+    DRAFT,
+    STARTED,
+    END
 }
