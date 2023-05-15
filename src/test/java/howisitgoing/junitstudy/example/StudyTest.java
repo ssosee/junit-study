@@ -2,9 +2,6 @@ package howisitgoing.junitstudy.example;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
-import org.springframework.test.context.junit.jupiter.EnabledIf;
-
-import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.*;
@@ -12,6 +9,32 @@ import static org.junit.jupiter.api.Assumptions.*;
 // Method와 Class 레퍼런스를 사용해서 테스트 이름을 표기하는 방법을 설정
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class StudyTest {
+
+    @FastTest
+    @DisplayName("fast Tag 어노테이션 테스트")
+    void fastAnnotationTest() {
+
+    }
+
+    @SlowTest
+    @DisplayName("fast Tag 어노테이션 테스트")
+    void slowAnnotationTest() {
+
+    }
+
+    @Test
+    @DisplayName("스터디 만들기 fast")
+    @Tag("fast")
+    void fastTest() {
+        // .. //
+    }
+
+    @Test
+    @DisplayName("스터디 만들기 slow")
+    @Tag("slow")
+    void slowTest() {
+        // .. //
+    }
 
     @Test
     @DisplayName("조건에 따라 테스트 실행하기")

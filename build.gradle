@@ -29,5 +29,9 @@ dependencies {
 }
 
 tasks.named('test') {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        incluedTags 'unit'
+        excludeTags 'bar'
+    }
 }
+
