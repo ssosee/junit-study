@@ -22,7 +22,11 @@ public class StudyService {
         Optional<Member> member = memberService.findById(memberId);
         Member owner = member.orElseThrow(() -> new IllegalArgumentException("회원이 없습니다."));
         study.setOwner(owner);
+        Study newStudy = studyRepository.save(study);
 
-        return studyRepository.save(study);
+        memberService.notify(newStudy);
+        memberService.notify(owner);
+
+        return newStudy;
     }
 }
