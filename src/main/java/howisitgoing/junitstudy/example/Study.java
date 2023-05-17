@@ -1,5 +1,6 @@
 package howisitgoing.junitstudy.example;
 
+import howisitgoing.junitstudy.domain.Member;
 import lombok.Data;
 import lombok.Getter;
 
@@ -9,6 +10,7 @@ public class Study {
     private StudyStatus status;
     private int limit;
     private String name;
+    private Member member;
 
     public Study(int limit) {
         this.status = StudyStatus.DRAFT;
@@ -29,5 +31,9 @@ public class Study {
                 "limit=" + limit +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    public void setOwner(Member member) {
+        this.member = member;
     }
 }
